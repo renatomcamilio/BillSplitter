@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="GUW-Ax-tor">
+                                <rect key="frame" x="14" y="73" width="572" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value splitted will show up here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W2-AR-Tkc">
+                                <rect key="frame" x="16" y="233" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="UQ0-vp-BVK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People currently splitting label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVw-qa-OAP">
+                                <rect key="frame" x="16" y="139" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qXC-ux-9eq">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qXC-ux-9eq" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="71:75" id="3aX-og-6tW"/>
+                            <constraint firstAttribute="centerX" secondItem="0W2-AR-Tkc" secondAttribute="centerX" id="7iz-vZ-nR1"/>
+                            <constraint firstAttribute="centerX" secondItem="RVw-qa-OAP" secondAttribute="centerX" id="A0R-fs-anC"/>
+                            <constraint firstItem="GUW-Ax-tor" firstAttribute="width" secondItem="qXC-ux-9eq" secondAttribute="width" id="J2U-LN-4ka"/>
+                            <constraint firstAttribute="centerX" secondItem="GUW-Ax-tor" secondAttribute="centerX" id="JBG-Qy-dLL"/>
+                            <constraint firstItem="RVw-qa-OAP" firstAttribute="width" secondItem="GUW-Ax-tor" secondAttribute="width" id="Nzf-Tr-g0E"/>
+                            <constraint firstItem="GUW-Ax-tor" firstAttribute="top" secondItem="qXC-ux-9eq" secondAttribute="bottom" constant="15" id="PZn-xX-1Kx"/>
+                            <constraint firstItem="0W2-AR-Tkc" firstAttribute="top" secondItem="RVw-qa-OAP" secondAttribute="bottom" constant="73" id="jsm-pd-iuA"/>
+                            <constraint firstItem="RVw-qa-OAP" firstAttribute="top" secondItem="GUW-Ax-tor" secondAttribute="bottom" constant="36" id="w07-QP-aqB"/>
+                            <constraint firstAttribute="centerX" secondItem="qXC-ux-9eq" secondAttribute="centerX" id="xFh-Ug-JAf"/>
+                            <constraint firstItem="qXC-ux-9eq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="zwu-WL-tku"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="peopleSplittingBillLabel" destination="RVw-qa-OAP" id="TvY-zt-CHJ"/>
+                        <outlet property="peopleSplittingBillSlider" destination="GUW-Ax-tor" id="q9u-k0-UTo"/>
+                        <outlet property="totalAmountField" destination="qXC-ux-9eq" id="GqI-Xh-40i"/>
+                        <outlet property="totalAmountPerPersonLabel" destination="0W2-AR-Tkc" id="oub-i6-rmr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304" y="429"/>
         </scene>
     </scenes>
 </document>
