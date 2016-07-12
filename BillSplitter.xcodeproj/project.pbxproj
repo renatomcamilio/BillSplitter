@@ -412,6 +412,7 @@
 				889C356C1A76C57000983AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		889C356D1A76C57000983AF5 /* Build configuration list for PBXNativeTarget "BillSplitterTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				889C356F1A76C57000983AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
